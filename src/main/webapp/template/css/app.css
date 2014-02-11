@@ -1,0 +1,39 @@
+.loginMenu{
+    display:none;
+}
+
+
+#nav li:hover a {
+    background-color: #c94663 !important;
+}
+
+.subBut
+{
+    border:0 !important;
+    margin-top: 1em !important;
+}
+
+.formLine
+{
+    margin-top: 1.5em;
+}
+
+.ta-editor {
+  min-height: 300px;
+  height: auto;
+  overflow: auto;
+  font-family: inherit;
+  font-size: 100%;
+  margin-top:1.3em;
+}
+
+.small
+{
+    width: auto;
+}
+
+.error
+{
+    
+    color:red;
+}
