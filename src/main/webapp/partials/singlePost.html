@@ -1,0 +1,22 @@
+<h2>&lt;&#47;Detail&gt;</h2>
+
+<br/>
+<div class="error" ng-bind="errormessages"></div>
+
+<article class="is-post is-post-excerpt">
+   
+     <header>
+         <h2><a href="#detail{{ post.url | urlEnding }}">{{ post.title }}</a></h2>
+        
+        <span class="byline">{{ post.subtitle }}</span>
+    </header>
+    
+     <div class="info">
+        <span class="date"><span class="month">{{ post.creationTimestamp | date:'dd-MM-yyyy'}}</span> <span class="day">{{ post.date }}</span><span class="year">, {{post.date}}</span></span>
+    </div>
+    
+    <img ng-src="{{ post.imageURI }}" alt=""/>
+   
+    <p>{{ post.content}}</p>
+    
+</article>

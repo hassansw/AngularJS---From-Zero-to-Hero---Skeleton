@@ -1,0 +1,36 @@
+<h2>&lt;&#47;Devcamp.io Blog&gt;</h2>
+<!-- Post -->
+
+<div ng-if="!postings">
+    Es sind keine Postings vorhanden!
+</div>
+
+<article ng-repeat="post in postings" class="is-post is-post-excerpt">
+
+     <header>
+         <h2><a href="#detail{{ post.url | postDetailUrl }}">{{ post.title }}</a></h2>
+        
+        <span class="byline">{{ post.subtitle }}</span>
+    </header>
+    
+     <div class="info">
+        <span class="date"><span class="month">{{ post.creationTimestamp | date:'dd-MM-yyyy'}}</span> <span class="day">{{ post.date }}</span><span class="year">, {{post.date}}</span></span>
+    </div>
+    
+     <!-- <img src="{{ post.imageURI }}" alt=""/-->
+     <img ng-src="{{ post.imageURI }}" alt=""/>
+   
+    <p>{{ post.content}}</p>
+    
+</article>
+
+{{pageSize}}
+<!-- Pager -->
+<div class="pager">
+    <!--<a href="#" class="button previous">Previous Page</a> ng-class="active: count===postData.page"-->
+    <div class="pages">
+        
+        <a href="#" ng-class="{'active': $index === currentPage-1}" ng-repeat="count in pageSize track by $index">{{ $index + 1 }}</a>
+    </div>
+    <a href="#" class="button next" ng-show="pageSize > 1">Next Page</a>
+</div>

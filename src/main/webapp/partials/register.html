@@ -1,0 +1,42 @@
+<article>
+    <h2>&lt;&#47;Register to Devcamp.io Blog&gt;</h2>
+
+    <div class="error" ng-bind="errormessages"></div>
+
+    <div class="formContainer">
+            <form name="registerForm" novalidate>
+               
+                <div class="formLine">
+                          <label>First name:</label>
+                          <input type="text" id="first_name" name="first_name" ng-model="user.firstname" required> 
+                           <span class="error" ng-show="registerForm.first_name.$error.required">Haii, what is your name, please!</span>
+                </div>
+
+                <div class="formLine">
+                          <label>Last name:</label>
+                          <input type="text" id="last_name" name="last_name" ng-model="user.lastname"  required>
+                          <span class="error" ng-show="registerForm.last_name.$error.required">Haii, what is your name, please!</span>
+                </div>
+
+                <div class="formLine">
+                          <label>Email address:</label>
+                          <input type="email" id="email_addr" name="email_addr" ng-model="user.email" required>
+                          <span class="error" ng-show="registerForm.email_addr.$error.email">Email not fit!</span>
+                </div>
+
+                <div class="formLine">
+                        <label>Password:</label>
+                        <input type="password" id="pw"  name="password" ng-model="user.password" ng-pattern="/(?=.{8,})(?=.*?[^\w\s])(?=.*?[0-9])(?=.*?[A-Z]).*?[a-z].*/" required>
+                        <span class="error" ng-show="registerForm.password.$error.pattern">This field must contain: <ul><li>one digit from 0-9</li><li>one special symbols in the list '@#$%'</li><li>one lowercase + one uppercase characters</li></ul> </span>
+                </div>
+
+                <div class="formLine">
+
+                    <input type="submit" id="submit" class="button small" value="Save" ng-click="register(registerForm)"/>
+                    <a href="#backend" class="button small">Abort</a>
+                </div>
+
+            </form>
+    </div>
+<article>
+

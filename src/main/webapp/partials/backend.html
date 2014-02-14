@@ -1,0 +1,30 @@
+<h2>&lt;&#47;Admin Area&gt;</h2>
+<br/>
+<p><a href="#newPost" class="button next">New Post</a></p>
+
+<br/>
+
+<h2>Posts</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr ng-repeat="post in postings">
+            <th>{{$index + 1}}</th>
+            <td>{{ post.title}}</td>
+            <td>{{ post.creationTimestamp | date:'dd-MM-yyyy HH:mm'}}</td>
+            <td>
+                <img src="img/basic1-020_bin_trash_delete.png" ng-click="deletePost(post)"/>
+                <a href="#editPost{{ post.url | postDetailUrl }}" class="loginButton buttonColor" ><img src="img/basic3-067_compose_new_pencil_write_edit.png"/></a>
+            </td>
+        </tr>
+
+    </tbody>
+</table>

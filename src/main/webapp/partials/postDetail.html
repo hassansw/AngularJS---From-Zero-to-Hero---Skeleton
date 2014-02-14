@@ -1,0 +1,42 @@
+<h2>&lt;&#47;Edit/New Post&gt;</h2>
+
+<br/>
+<div class="error" ng-bind="errormessages"></div>
+
+<div class="formContainer">
+    <form name="postForm">
+
+        <div class="formLine">
+                  <label>Titel:</label>
+                  <input type="text" id="title" name="title" ng-model="post.title" autofocus="true" required/>
+                  <span class="error" ng-show="postForm.title.$error.required">this field is required</span>
+        </div>
+
+            <div class="formLine">
+                      <label>Untertitel:</label>
+                      <input type="text" id="sub_title" name="sub_title" ng-model="post.subtitle" required/>
+                      <span class="error" ng-show="postForm.sub_title.$error.required">this field is required</span>
+            </div>
+
+           <div class="formLine">
+                 <span ng-switch on="editImage">
+                    <span ng-switch-when=false>{{ post.imageURI | urlEnding }}  <input type="submit" class="button small" value="edit Image" ng-click="toggleEditImage()"/></span>
+                    <span ng-switch-when=true>
+                         <input type="file" id="fileToUpload" onchange="angular.element(this).scope().uploadFile(this.files)">
+                    </span>
+                 </span>
+           </div>
+
+            <div class="formLine">
+                <div text-angular="text-angular" name="content" ng-model="post.content" required></div>
+                <span class="error" ng-show="postForm.content.$error.required">this field is required</span>
+           </div>
+
+           <div class="formLine">
+                 
+            <a href="#no" class="button small" ng-click="postIt(postForm)">Save</a>
+            <a href="#backend" class="button small">Abort</a>
+           </div>
+    </form> 
+</div>
+
