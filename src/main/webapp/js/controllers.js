@@ -2,16 +2,7 @@
 
 /* Controllers */
 
-angular.module('devcampBlog.controllers', [])
-
-  controller('MyCtrl1', ["$scope", function($scope) {
-
-	  
-	  
-  }])
-  .controller('MyCtrl2', [function() {
-
-  }]);
+angular.module('devcampBlog.controllers', []);
 
 
 function RegisterController($scope, $location, Blogger) {
