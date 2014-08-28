@@ -31,7 +31,19 @@ angular.module('devcampBlog.filters', []).
         
     }
   };
-});
+})
+
+.filter('unsafe',  ['$sce', function($sce) {
+   return function(val) {
+       
+       if(val!== undefined){
+            return $sce.trustAsHtml(val);
+       }else{
+           return val;
+       }
+       
+    };
+}]);
 
 
 

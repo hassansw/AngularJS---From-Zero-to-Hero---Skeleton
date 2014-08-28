@@ -8,3 +8,8 @@ backend/DevcampBlog/.settings/
 backend/DevcampBlog/src/main/resources/rebel.xml
 
 backend/DevcampBlog/.forge_settings
+/target
+
+.classpath
+.project
+.settings/

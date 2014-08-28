@@ -20,7 +20,7 @@
      <!-- <img src="{{ post.imageURI }}" alt=""/-->
      <img ng-src="{{ post.imageURI }}" alt=""/>
    
-    <p>{{ post.content}}</p>
+    <span ng-bind-html="post.content | unsafe"></span>
     
 </article>
 
