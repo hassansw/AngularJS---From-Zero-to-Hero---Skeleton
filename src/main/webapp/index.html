@@ -114,7 +114,7 @@
                         <h2>Recent Posts</h2>
                     </header>
                     <ul>
-                        <li ng-repeat="post in recents"><a href="#detail{{ post.url | urlEnding }}">{{post.title}}</a></li>
+                        <li ng-repeat="post in recents"><a href="#detail{{ post.url | postDetailUrl }}">{{post.title}}</a></li>
                     </ul>
                 </section>
 
